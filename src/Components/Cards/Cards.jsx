@@ -6,7 +6,7 @@ const Cards = () => {
   return (
     <div className='section flex flex-col gap-4'>
         <SectionTitle title={'Cards'} />
-        <div className='grid grid-cols-3 gap-6'>
+        <div className='grid grid-cols-4 gap-6'>
           <CardItem />
           <CardItem />
           <CardItem />
