@@ -64,10 +64,25 @@ const fetchList = (name) => {
     return data
 }
 
+const deleteItem = (name, id) => {
+    const vaults = getVaults(name)
+    for(let i in vaults){
+        const vault = getVault(vaults[i])
+        for(let j in vault){
+            if(j === id){
+                delete vault[j]
+                saveToVault(vaults[i], vault)
+                break;
+            }
+        }
+    }
+}
+
 const store = {
 
     savePassword(data, id) {
         if(id){
+            data.id = id
             updatedFromVault('passwords', id, data)
             return data
         }
@@ -80,6 +95,10 @@ const store = {
     getPasswords(){
         const passwords = fetchList('passwords')
         return Object.values(passwords)
+    },
+
+    deletePassword(id){
+        deleteItem('passwords', id)
     }
 
 }

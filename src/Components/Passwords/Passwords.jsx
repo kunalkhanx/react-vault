@@ -18,6 +18,7 @@ const Passwords = () => {
 
   const fetchPasswords = () => {
     const response = store.getPasswords()
+    // console.log(response)
     setPasswordsList(response)
   }
 
@@ -37,14 +38,23 @@ const Passwords = () => {
     }else{
       setSelectedPassword(null)
     }
-    
+  }
+
+  const onDeleteModeHandler = (password) => {
+    if(password){
+      if(window.confirm('Are you sure to delete the password?')){
+        store.deletePassword(password.id)
+        fetchPasswords()
+      }
+    }else{
+    }
   }
 
   return (
     <div className='section flex flex-col gap-4'>
         <SectionTitle title={'Passwords'} onAction={formOpenHandler} />
         <div className='grid grid-cols-4 gap-6'>
-          {passwordsList.map(password => <PasswordItem password={password} key={password.id} onEditMode={onEditModeHandler} />)}
+          {passwordsList.map(password => <PasswordItem password={password} key={password.id} onEditMode={onEditModeHandler} onDelete={onDeleteModeHandler} />)}
             
         </div>
         {formMode ? <Modal onClose={onFormCloseHandler} className={'max-w-sm'}>
