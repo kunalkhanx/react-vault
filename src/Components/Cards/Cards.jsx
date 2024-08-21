@@ -9,6 +9,7 @@ const Cards = () => {
 
   const [formMode, setFormMode] = useState(false)
   const [cardList, setCardList] = useState([])
+  const [selectedCard, setSelectedCard] = useState(null)
 
   useEffect(() => {
     fetchCards()
@@ -28,15 +29,34 @@ const Cards = () => {
     fetchCards()
   }
 
+  const onEditModeHandler = (card) => {
+    if(card){
+      setSelectedCard(card)
+      setFormMode(true)
+    }else{
+      setSelectedCard(null)
+    }
+  }
+
+  const onDeleteModeHandler = (card) => {
+    if(card){
+      if(window.confirm('Are you sure to delete the card?')){
+        store.deleteData('cards', card.id)
+        fetchCards()
+      }
+    }else{
+    }
+  }
+
   return (
     <div className='section flex flex-col gap-4'>
         <SectionTitle title={'Cards'} onAction={formOpenHandler} />
         <div className='grid grid-cols-4 gap-6'>
-        {cardList.map(card => <CardItem card={card} key={card.id} />)}
+        {cardList.map(card => <CardItem card={card} key={card.id} onEditMode={onEditModeHandler} onDelete={onDeleteModeHandler} />)}
         </div>
 
         {formMode ? <Modal onClose={onFormCloseHandler} className={'max-w-sm'}>
-          <CardForm onClose={onFormCloseHandler} />
+          <CardForm onClose={onFormCloseHandler} selectedCard={selectedCard} />
         </Modal> : null}
     </div>
   )

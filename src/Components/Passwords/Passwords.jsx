@@ -43,7 +43,7 @@ const Passwords = () => {
   const onDeleteModeHandler = (password) => {
     if(password){
       if(window.confirm('Are you sure to delete the password?')){
-        store.deletePassword(password.id)
+        store.deleteData('passwords', password.id)
         fetchPasswords()
       }
     }else{

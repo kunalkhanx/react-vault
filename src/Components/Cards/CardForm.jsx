@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SelectInput from '../../Elements/SelectInput'
 import TextInput from '../../Elements/TextInput'
 import { z } from 'zod';
@@ -29,6 +29,17 @@ const CardForm = ({ selectedCard, onClose }) => {
 
     const [errors, setErrors] = useState({ cardName: [], cardType: [], cardNumber: [], cardExpireMonth: [], cardExpireYear: [], cvv: [] })
 
+    useEffect(() => {
+        if(selectedCard){
+            setCardName(selectedCard.cardName)
+            setCardType(selectedCard.cardType)
+            setCardNumber(selectedCard.cardNumber)
+            setCardExpireMonth(selectedCard.cardExpireMonth)
+            setCardExpireYear(selectedCard.cardExpireYear)
+            setCvv(selectedCard.cvv)
+        }
+    }, [selectedCard])
+
 
 
     const onSubmitHandler = (e) => {
@@ -41,7 +52,7 @@ const CardForm = ({ selectedCard, onClose }) => {
             setErrors({...errors, ...result.error.flatten().fieldErrors})
             return
         }
-        store.savedata('cards', {cardName, cardType, cardNumber, cardExpireMonth, cardExpireYear, cvv})
+        store.savedata('cards', {cardName, cardType, cardNumber, cardExpireMonth, cardExpireYear, cvv}, selectedCard ? selectedCard.id : null)
         onClose()
     }
 
