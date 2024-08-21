@@ -80,26 +80,26 @@ const deleteItem = (name, id) => {
 
 const store = {
 
-    savePassword(data, id) {
+    savedata(name, data, id) {
         if(id){
             data.id = id
-            updatedFromVault('passwords', id, data)
+            updatedFromVault(name, id, data)
             return data
         }
         const uid = uuidv4()
         data.id = uid
-        addToVault('passwords', uid, data)
+        addToVault(name, uid, data)
         return data
     },
 
-    getPasswords(){
-        const passwords = fetchList('passwords')
-        return Object.values(passwords)
+    getData(name){
+        const data = fetchList(name)
+        return Object.values(data)
     },
 
-    deletePassword(id){
-        deleteItem('passwords', id)
-    }
+    deleteData(name, id){
+        deleteItem(name, id)
+    },
 
 }
 

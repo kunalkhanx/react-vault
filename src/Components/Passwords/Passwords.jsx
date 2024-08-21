@@ -17,7 +17,7 @@ const Passwords = () => {
   }, [])
 
   const fetchPasswords = () => {
-    const response = store.getPasswords()
+    const response = store.getData('passwords')
     // console.log(response)
     setPasswordsList(response)
   }

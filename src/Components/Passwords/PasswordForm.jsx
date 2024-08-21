@@ -38,7 +38,7 @@ const PasswordForm = ({onClose, selectedPassword}) => {
             setErrors(result.error.flatten().fieldErrors)
             return
         }
-        store.savePassword({siteName, username, password}, selectedPassword ? selectedPassword.id : null)
+        store.savedata('passwords', {siteName, username, password}, selectedPassword ? selectedPassword.id : null)
         onClose()
     }
 
