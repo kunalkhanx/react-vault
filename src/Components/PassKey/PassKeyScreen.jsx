@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import TextInput from '../../Elements/TextInput'
 
-const PassKey = () => {
+const PassKeyScreen = ({setValue}) => {
 
     const [key, setKey] = useState('')
 
     const onSubmitHandler = (e) => {
+        setValue(key)
         e.preventDefault()
     }
     
@@ -24,4 +25,4 @@ const PassKey = () => {
   )
 }
 
-export default PassKey
+export default PassKeyScreen

@@ -1,11 +1,12 @@
-import PassKey from "./Components/PassKey/PassKey";
+import { PassKeyProvider } from "./Components/Contexts/PassKey";
 import { Page } from "./Page";
 
 function App() {
   return (
     <div className="App">
-      {/* <Page /> */}
-      <PassKey />
+      <PassKeyProvider>
+        <Page />
+      </PassKeyProvider>
     </div>
   );
 }
