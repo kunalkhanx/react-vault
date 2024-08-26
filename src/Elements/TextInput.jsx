@@ -27,7 +27,7 @@ const TextInput = ({ className, label, type = 'text', placeholder, error, value,
                     }
                 </button>
                 : null}
-            {error ? <p className='text-red-600'>{error}/</p> : null}
+            {error ? <p className='text-red-600'>{error}</p> : null}
         </div>
     )
 }
