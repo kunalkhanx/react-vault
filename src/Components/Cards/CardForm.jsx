@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SelectInput from '../../Elements/SelectInput'
 import TextInput from '../../Elements/TextInput'
 import { z } from 'zod';
 import store from '../../Lib/store';
+import { PassKey } from '../Contexts/PassKey';
 
 const cardTypes = [
     {label: 'Credit Card', value: 'Credit Card' },
@@ -29,6 +30,8 @@ const CardForm = ({ selectedCard, onClose }) => {
 
     const [errors, setErrors] = useState({ cardName: [], cardType: [], cardNumber: [], cardExpireMonth: [], cardExpireYear: [], cvv: [] })
 
+    const {key} = useContext(PassKey)
+
     useEffect(() => {
         if(selectedCard){
             setCardName(selectedCard.cardName)
@@ -52,7 +55,7 @@ const CardForm = ({ selectedCard, onClose }) => {
             setErrors({...errors, ...result.error.flatten().fieldErrors})
             return
         }
-        store.savedata('cards', {cardName, cardType, cardNumber, cardExpireMonth, cardExpireYear, cvv}, selectedCard ? selectedCard.id : null)
+        store.savedata('cards', {cardName, cardType, cardNumber, cardExpireMonth, cardExpireYear, cvv}, selectedCard ? selectedCard.id : null, key)
         onClose()
     }
 

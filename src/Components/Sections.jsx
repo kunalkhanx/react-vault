@@ -6,7 +6,7 @@ import Notes from './Notes/Notes'
 
 const Sections = () => {
 
-    const [currentSection, setCurrentSection] = useState('notes')
+    const [currentSection, setCurrentSection] = useState('passwords')
 
     const tabChangeHandler = (tab) => {
         setCurrentSection(tab)

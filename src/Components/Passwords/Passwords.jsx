@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import PasswordItem from './PasswordItem'
 import SectionTitle from '../SectionTitle'
 import Modal from '../../Elements/Modal'
 import PasswordForm from './PasswordForm'
 import store from '../../Lib/store'
+import { PassKey } from '../Contexts/PassKey'
 
 
 const Passwords = () => {
@@ -12,13 +13,14 @@ const Passwords = () => {
   const [passwordsList, setPasswordsList] = useState([])
   const [selectedPassword, setSelectedPassword] = useState(null)
 
+  const {key} = useContext(PassKey)
+
   useEffect(() => {
     fetchPasswords()
   }, [])
 
   const fetchPasswords = () => {
-    const response = store.getData('passwords')
-    // console.log(response)
+    const response = store.getData('passwords', key)
     setPasswordsList(response)
   }
 

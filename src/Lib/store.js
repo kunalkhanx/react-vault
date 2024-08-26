@@ -1,4 +1,5 @@
 import { v4 as uuidv4 } from 'uuid';
+import { AES, enc } from 'crypto-js';
 
 const getVaults = (name) => {
     let vaults = JSON.parse(localStorage.getItem(`${name}_vaults`));
@@ -80,21 +81,27 @@ const deleteItem = (name, id) => {
 
 const store = {
 
-    savedata(name, data, id) {
+    savedata(name, data, id, key) {
         if(id){
             data.id = id
-            updatedFromVault(name, id, data)
+            const encData = AES.encrypt(JSON.stringify(data), key).toString()
+            updatedFromVault(name, id, encData)
             return data
         }
         const uid = uuidv4()
         data.id = uid
-        addToVault(name, uid, data)
+        const encData = AES.encrypt(JSON.stringify(data), key).toString()
+        addToVault(name, uid, encData)
         return data
     },
 
-    getData(name){
+    getData(name, key){
         const data = fetchList(name)
-        return Object.values(data)
+        const result = []
+        for(let i in data){
+            result.push(JSON.parse(AES.decrypt(data[i], key).toString(enc.Utf8)))
+        }
+        return result
     },
 
     deleteData(name, id){

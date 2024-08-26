@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SectionTitle from '../SectionTitle'
 import NoteItem from './NoteItem'
 import Modal from '../../Elements/Modal'
 import NoteForm from './NoteForm'
 import store from '../../Lib/store'
+import { PassKey } from '../Contexts/PassKey'
 
 const Notes = () => {
 
@@ -11,12 +12,14 @@ const Notes = () => {
   const [notesList, setNotesList] = useState([])
   const [selectedNote, setSelectedNote] = useState(null)
 
+  const {key} = useContext(PassKey)
+
   useEffect(() => {
     fetchNotes()
   }, [])
 
   const fetchNotes = () => {
-    const response = store.getData('notes')
+    const response = store.getData('notes', key)
     setNotesList(response)
   }
 

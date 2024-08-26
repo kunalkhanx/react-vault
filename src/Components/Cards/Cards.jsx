@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import SectionTitle from '../SectionTitle'
 import CardItem from './CardItem'
 import Modal from '../../Elements/Modal'
 import CardForm from './CardForm'
 import store from '../../Lib/store'
+import { PassKey } from '../Contexts/PassKey'
 
 const Cards = () => {
 
@@ -11,12 +12,14 @@ const Cards = () => {
   const [cardList, setCardList] = useState([])
   const [selectedCard, setSelectedCard] = useState(null)
 
+  const {key} = useContext(PassKey)
+
   useEffect(() => {
     fetchCards()
   }, [])
 
   const fetchCards = () => {
-    const response = store.getData('cards')
+    const response = store.getData('cards', key)
     setCardList(response)
   }
 

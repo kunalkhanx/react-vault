@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TextInput from '../../Elements/TextInput'
 import { z } from "zod";
 import store from '../../Lib/store';
+import { PassKey } from '../Contexts/PassKey';
 
 const createPasswordSchema = z.object({
     siteName: z.string().min(1),
@@ -18,6 +19,8 @@ const PasswordForm = ({onClose, selectedPassword}) => {
     const [password, setPassword] = useState('')
 
     const [errors, setErrors] = useState({siteName:[''], username: [''], password: ['']})
+
+    const {key} = useContext(PassKey)
 
     useEffect(() => {
         if(selectedPassword){
@@ -38,7 +41,7 @@ const PasswordForm = ({onClose, selectedPassword}) => {
             setErrors(result.error.flatten().fieldErrors)
             return
         }
-        store.savedata('passwords', {siteName, username, password}, selectedPassword ? selectedPassword.id : null)
+        store.savedata('passwords', {siteName, username, password}, selectedPassword ? selectedPassword.id : null, key)
         onClose()
     }
 

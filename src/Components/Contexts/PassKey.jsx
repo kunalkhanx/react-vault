@@ -6,7 +6,7 @@ export const PassKey = createContext(null)
 
 export const PassKeyProvider = ({children}) => {
 
-    const [key, setKey] = useState(null)
+    const [key, setKey] = useState('123')
 
     return (
         <PassKey.Provider value={{key}}>

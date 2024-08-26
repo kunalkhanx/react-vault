@@ -1,5 +1,6 @@
 # Pending
-- Implete password encryption
+- Implement password encryption
+- Implement passkey validation
 - Add settings modules
 - Update the UI
 

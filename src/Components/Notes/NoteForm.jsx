@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TextInput from '../../Elements/TextInput'
 import TextArea from '../../Elements/TextArea'
 import { z } from 'zod';
 import store from '../../Lib/store';
+import { PassKey } from '../Contexts/PassKey';
 
 const createNoteSchema = z.object({
     title: z.string().min(1),
@@ -15,6 +16,8 @@ const NoteForm = ({selectedNote, onClose}) => {
     const [content, setContent] = useState('')
 
     const [errors, setErrors] = useState({title: [], content: []})
+
+    const {key} = useContext(PassKey)
 
     useEffect(() => {
         if(selectedNote){
@@ -35,7 +38,7 @@ const NoteForm = ({selectedNote, onClose}) => {
             setErrors(result.error.flatten().fieldErrors)
             return
         }
-        store.savedata('notes', {title, content}, selectedNote ? selectedNote.id : null)
+        store.savedata('notes', {title, content}, selectedNote ? selectedNote.id : null, key)
         onClose()
     }
 
