@@ -1,5 +1,9 @@
 # Pending
 - Add settings modules
+- Implement Password Expire
+- Implement crypto algo customization
+- Implement import/export data
+- Update contents & help texts
 - Update the UI
 - Store tabe state
 
