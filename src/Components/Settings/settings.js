@@ -4,7 +4,7 @@ const settings = {
         let response = JSON.parse(localStorage.getItem('settings'))
         if(!response){
             response = {
-                passkey_expire: 300
+                passkey_expire: 60
             }
             localStorage.setItem('settings', JSON.stringify(response))
         }
