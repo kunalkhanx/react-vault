@@ -1,11 +1,11 @@
 # Pending
-- Implement crypto algo customization
-- Implement import/export data
+- Implement import data
 - Update contents & help texts
 - Update the UI
 - Store tabe state
 
 # Complete
+- Implement export data
 - Logic to password expire when idle
 - Implement Password Expire
 - Create Settings Context
