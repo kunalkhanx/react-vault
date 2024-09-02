@@ -1,5 +1,4 @@
 # Pending
-- Logic to password expire when idle
 - Implement crypto algo customization
 - Implement import/export data
 - Update contents & help texts
@@ -7,6 +6,7 @@
 - Store tabe state
 
 # Complete
+- Logic to password expire when idle
 - Implement Password Expire
 - Create Settings Context
 - Add settings modules
