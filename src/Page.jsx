@@ -9,6 +9,7 @@ export const Page = () => {
   
   const [openSetting, setOpenSetting] = useState(false)
   const {resetTimer} = useContext(PassKey)
+  const [loadSections, setLoadSections] = useState(true)
 
   useEffect(() => {
     document.addEventListener('click', resetTimer);
@@ -17,15 +18,26 @@ export const Page = () => {
     };
   }, [resetTimer])
 
+  useEffect(() => {
+    if(!loadSections){
+      setLoadSections(true)
+    }
+  }, [loadSections])
+
+  const onSettingsClose = () => {
+    setLoadSections(false)
+    setOpenSetting(false)
+  }
+
   return (
     <div className='flex flex-col gap-6 text-zinc-600'>
         {openSetting ? 
-          <Modal className="max-w-xl" onClose={() => setOpenSetting(false)}>
-            <SettingsModal onClose={() => setOpenSetting(false)} />
+          <Modal className="max-w-xl" onClose={onSettingsClose}>
+            <SettingsModal onClose={onSettingsClose} />
           </Modal> 
         : null}
         <Navbar onSettingOpen={() => setOpenSetting(true)} />
-        <Sections />
+        {loadSections ? <Sections /> : null}
     </div>
   )
 }
