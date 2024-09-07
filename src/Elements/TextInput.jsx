@@ -14,7 +14,7 @@ const TextInput = ({ className, label, type = 'text', placeholder, error, value,
     return (
         <div className={`${className} w-full ${type === 'password' ? 'relative' : ''}`}>
             {label ? <label htmlFor={inputId} className='block'>{label}</label> : null}
-            <input value={value} id={inputId} onChange={onChangeHandler} type={type === 'password' ? (view ? 'text' : 'password') : type} placeholder={placeholder} className={`py-1.5 ${type === 'password' ? 'pl-3 pr-8' : 'px-3'} rounded bg-zinc-100 focus:bg-white border focus:outline-none focus:border-rose-500 block w-full`} />
+            <input value={value} id={inputId} onChange={onChangeHandler} type={type === 'password' ? (view ? 'text' : 'password') : type} placeholder={placeholder} className={`py-1.5 ${type === 'password' ? 'pl-3 pr-8' : 'px-3'} rounded bg-zinc-100 focus:bg-white text-gray-800 border focus:outline-none focus:border-rose-500 block w-full`} />
             {type === 'password' ?
                 <button type='button' onClick={() => setView(!view)} className='py-1.5 px-1.5 absolute top-6 right-0 text-zinc-500'>
                     {view ? <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">

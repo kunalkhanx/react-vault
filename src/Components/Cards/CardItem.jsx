@@ -19,7 +19,7 @@ const CardItem = ({ card, onEditMode, onDelete }) => {
     }
 
     return (
-        <div className='rounded-md border bg-white py-6 px-4 flex flex-col gap-1 text-sm relative [&>.action-btns]:hidden [&>.action-btns]:hover:flex'>
+        <div className='rounded-md border border-gray-700 bg-gray-900 py-6 px-4 flex flex-col gap-1 text-sm relative [&>.action-btns]:hidden [&>.action-btns]:hover:flex'>
             <div className='items-center gap-1 absolute right-2 top-1 action-btns'>
                 <button type='button' className='p-1 hover:text-green-500 transition-all' onClick={onEditBtnClickHandler}>
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-4">

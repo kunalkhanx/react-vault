@@ -30,7 +30,7 @@ export const Page = () => {
   }
 
   return (
-    <div className='flex flex-col gap-6 text-zinc-600'>
+    <div className='flex flex-col gap-6 text-gray-200 bg-gray-800 min-h-screen'>
         {openSetting ? 
           <Modal className="max-w-xl" onClose={onSettingsClose}>
             <SettingsModal onClose={onSettingsClose} />
