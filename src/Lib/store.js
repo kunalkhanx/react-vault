@@ -108,6 +108,15 @@ const store = {
         deleteItem(name, id)
     },
 
+    state(name, value){
+        const states = JSON.parse(localStorage.getItem('_state')) || {};
+        if(!value){
+            return states[name];
+        }
+        states[name] = value
+        localStorage.setItem('_state', JSON.stringify(states))
+    }
+
 }
 
 export default store

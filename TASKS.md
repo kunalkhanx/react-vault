@@ -1,12 +1,11 @@
 # Pending
-- Validate key before import
 - Form action alerts 
 - Update contents & help texts
 - Update the UI
-- Store tab state
 - Validate complete data before start imporing
 
 # Complete
+- Store tab state
 - Fix: Export error if a valut empty
 - Change state after import
 - Implement import data

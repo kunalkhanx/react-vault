@@ -1,16 +1,27 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import SectionTabs from './Navbar/SectionTabs'
 import Passwords from './Passwords/Passwords'
 import Cards from './Cards/Cards'
 import Notes from './Notes/Notes'
+import store from '../Lib/store'
 
 const Sections = () => {
 
-    const [currentSection, setCurrentSection] = useState('passwords')
+    const [currentSection, setCurrentSection] = useState(null)
 
     const tabChangeHandler = (tab) => {
         setCurrentSection(tab)
+        store.state('last_tab', tab)
     }
+
+    useEffect(() => {
+      const last_tab = store.state('last_tab')
+      if(last_tab){
+        setCurrentSection(last_tab)
+      }else{
+        setCurrentSection('passwords')
+      }
+    }, [])
 
   return (
     <div className='flex flex-col gap-6'>
