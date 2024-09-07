@@ -3,9 +3,9 @@ import store from './store';
 
 const generateData = () => {
     const data = {
-        passwords_vaults: JSON.parse(localStorage.getItem('passwords_vaults')),
-        cards_vaults: JSON.parse(localStorage.getItem('cards_vaults')),
-        notes_vaults: JSON.parse(localStorage.getItem('notes_vaults'))
+        passwords_vaults: JSON.parse(localStorage.getItem('passwords_vaults')) || [],
+        cards_vaults: JSON.parse(localStorage.getItem('cards_vaults')) || [],
+        notes_vaults: JSON.parse(localStorage.getItem('notes_vaults')) || []
     }
 
     const allList = [...data.passwords_vaults, ...data.cards_vaults, ...data.notes_vaults]

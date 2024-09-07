@@ -1,5 +1,4 @@
 # Pending
-- Fix: Export error if a valut empty
 - Validate key before import
 - Form action alerts 
 - Update contents & help texts
@@ -8,6 +7,7 @@
 - Validate complete data before start imporing
 
 # Complete
+- Fix: Export error if a valut empty
 - Change state after import
 - Implement import data
 - Implement export data
