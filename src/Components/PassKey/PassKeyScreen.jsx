@@ -37,8 +37,8 @@ const PassKeyScreen = ({setValue}) => {
     }, [])
     
   return (
-    <div className='w-screen h-screen bg-white flex items-center justify-center'>
-        <div className='w-full max-w-sm shadow-md rounded border p-4'>
+    <div className='w-screen h-screen text-gray-200 bg-gray-800 flex items-center justify-center'>
+        <div className='w-full max-w-sm shadow-md rounded-md border border-gray-700 bg-gray-900 p-4'>
             <form method='POST' className='flex flex-col gap-4' onSubmit={onSubmitHandler}>
                 <h2 className='text-lg font-medium'>{hash === null ? 'Please create a secret key' : 'Please enter the secret key'}</h2>
                 <TextInput error={error} value={key} setValue={setKey} placeholder={'Enter your passkey here.'} />

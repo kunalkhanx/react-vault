@@ -7,7 +7,7 @@ export const PassKey = createContext(null)
 
 export const PassKeyProvider = ({children}) => {
 
-    const [key, setKey] = useState('123')
+    const [key, setKey] = useState(null)
     const [reset, setReset] = useState(0)
     const {settingsData} = useContext(SettingsContext)
 
