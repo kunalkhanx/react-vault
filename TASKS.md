@@ -9,9 +9,9 @@
 - Chnage the Logo
 - Make UI Responsive
 - Create custom delete confirmation modal
-- Make button components
 
 # Complete
+- Make button components
 - Store tab state
 - Fix: Export error if a valut empty
 - Change state after import

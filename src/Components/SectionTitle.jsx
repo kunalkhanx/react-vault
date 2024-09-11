@@ -1,10 +1,11 @@
 import React from 'react'
+import PrimaryButton from '../Elements/PrimaryButton'
 
 const SectionTitle = ({ title, onAction }) => {
   return (
     <div className='flex items-center justify-between'>
       <h1 className='font-medium text-2xl'>{title}</h1>
-      <button type='button' onClick={onAction} className="rounded-md bg-blue-600 text-white hover:bg-blue-700 py-2 px-5">Add</button>
+      <PrimaryButton onClick={onAction}>Add</PrimaryButton>
     </div>
   )
 }

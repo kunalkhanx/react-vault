@@ -4,6 +4,8 @@ import TextInput from '../../Elements/TextInput'
 import { z } from 'zod';
 import store from '../../Lib/store';
 import { PassKey } from '../Contexts/PassKey';
+import Close from '../../Elements/Close';
+import PrimaryButton from '../../Elements/PrimaryButton';
 
 const cardTypes = [
     {label: 'Credit Card', value: 'Credit Card' },
@@ -63,11 +65,7 @@ const CardForm = ({ selectedCard, onClose }) => {
         <form onSubmit={onSubmitHandler} className='flex flex-col gap-4'>
             <div className='flex items-center justify-between'>
                 <p className='text-lg font-medium'>{selectedCard ? 'Update' : 'Add New'} Card</p>
-                <button type='button' onClick={onClose} className='w-6 h-6 rounded border hover:bg-zinc-200 flex justify-center items-center'>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M6 18 18 6M6 6l12 12" />
-                    </svg>
-                </button>
+                <Close onClose={onClose} />
             </div>
 
             <TextInput value={cardName} setValue={setCardName} label={'Card Name'} placeholder={'Ex. Americal Express'} error={errors.cardName[0]} />
@@ -80,7 +78,7 @@ const CardForm = ({ selectedCard, onClose }) => {
             <TextInput type='number' value={cvv} setValue={setCvv} label={'CVV'} placeholder={'123'} error={errors.cvv[0]} />
 
             <div>
-                <button type='submit' className="rounded-md bg-blue-600 text-white hover:bg-blue-700 py-2 px-5">Save</button>
+                <PrimaryButton type='submit'>Save</PrimaryButton>
             </div>
         </form>
     )
