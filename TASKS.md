@@ -9,6 +9,8 @@
 - Chnage the Logo
 - Make UI Responsive
 - Create custom delete confirmation modal
+- Update color schema
+- Make PassKey screen dark
 
 # Complete
 - Make button components
