@@ -1,9 +1,7 @@
 # Pending
 - Form action alerts 
 - Update contents & help texts
-- Update the UI
 - Validate complete data before start imporing
-- Update Button
 - Update Inputs
 - Make UI Responsive
 - Create custom delete confirmation modal
@@ -11,6 +9,8 @@
 
 
 # Complete
+- Update Buttons
+- Update the UI
 - Make PassKey screen dark
 - Chnage the Logo
 - Make the UI dark (make all readable)
