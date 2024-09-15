@@ -3,12 +3,13 @@
 - Update contents & help texts
 - Validate complete data before start imporing
 - Update Inputs
-- Make UI Responsive
 - Create custom delete confirmation modal
-- Update color schema
+
 
 
 # Complete
+- Make UI Responsive
+- Update color schema
 - Update Buttons
 - Update the UI
 - Make PassKey screen dark

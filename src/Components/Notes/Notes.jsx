@@ -54,7 +54,7 @@ const Notes = () => {
   return (
     <div className='section flex flex-col gap-4'>
         <SectionTitle title={'Notes'} onAction={formOpenHandler} />
-        <div className='grid grid-cols-4 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4'>
             {notesList.map(note => <NoteItem key={note.id} note={note} onEditMode={onEditModeHandler} onDelete={onDeleteModeHandler} />)}
         </div>
         {formMode ? <Modal onClose={onFormCloseHandler} className={'max-w-sm'}>

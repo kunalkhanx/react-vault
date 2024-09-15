@@ -4,7 +4,7 @@ import logo from '../../images/logo.png'
 const Navbar = ({onSettingOpen}) => {
     return (
         <div className='bg-gray-900'>
-            <div className='flex items-center justify-between section h-16'>
+            <div className='flex items-center justify-between section h-16 px-4'>
                 <img src={logo} alt="" className='h-10' />
                 <div className='flex items-center justify-end'>
                     <button onClick={onSettingOpen} className='p-4 hover:text-blue-600 transition-all'>

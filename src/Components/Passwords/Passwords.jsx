@@ -55,7 +55,7 @@ const Passwords = () => {
   return (
     <div className='section flex flex-col gap-4'>
         <SectionTitle title={'Passwords'} onAction={formOpenHandler} />
-        <div className='grid grid-cols-4 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4'>
           {passwordsList.map(password => <PasswordItem password={password} key={password.id} onEditMode={onEditModeHandler} onDelete={onDeleteModeHandler} />)}
             
         </div>

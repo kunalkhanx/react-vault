@@ -54,7 +54,7 @@ const Cards = () => {
   return (
     <div className='section flex flex-col gap-4'>
         <SectionTitle title={'Cards'} onAction={formOpenHandler} />
-        <div className='grid grid-cols-4 gap-6'>
+        <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4'>
         {cardList.map(card => <CardItem card={card} key={card.id} onEditMode={onEditModeHandler} onDelete={onDeleteModeHandler} />)}
         </div>
 
