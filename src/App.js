@@ -1,15 +1,18 @@
 import { PassKeyProvider } from "./Components/Contexts/PassKey";
 import { SettingsProvider } from "./Components/Contexts/SettingsCtx";
+import { ToastProvider } from "./Components/Contexts/ToastContext";
 import { Page } from "./Page";
 
 function App() {
   return (
     <div className="App">
-      <SettingsProvider>
-        <PassKeyProvider>
-          <Page />
-        </PassKeyProvider>
-      </SettingsProvider>
+      <ToastProvider>
+        <SettingsProvider>
+          <PassKeyProvider>
+            <Page />
+          </PassKeyProvider>
+        </SettingsProvider>
+      </ToastProvider>
     </div>
   );
 }

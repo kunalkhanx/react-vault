@@ -1,7 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import TextInput from '../../Elements/TextInput'
 import { SHA256 } from 'crypto-js'
 import PrimaryButton from '../../Elements/PrimaryButton'
+import { ToastContext } from '../Contexts/ToastContext'
 
 const nounce = 'magemonitor' // This is a string key that will use to verify key by hashing
 
@@ -11,14 +12,16 @@ const PassKeyScreen = ({setValue}) => {
     const [hash, setHash] = useState(false)
     const [error, setError] = useState(null)
 
+    const {runToast} = useContext(ToastContext)
+
     const onSubmitHandler = (e) => {
         e.preventDefault()
         setError(null)
-        // if(key.length < 4){
-        //     setError('Passkey size can\'t be less then 4 char(s)')
-        //     return
-        // }
         if(hash === null){
+            if(key.length < 4){
+                setError('Passkey size can\'t be less then 4 char(s)')
+                return
+            }
             const _hash = SHA256(nounce + key).toString()
             localStorage.setItem('_hash', _hash)
             setHash(_hash)
@@ -30,6 +33,7 @@ const PassKeyScreen = ({setValue}) => {
             }
         }
         setValue(key)
+        runToast('Welcome back!')
     }
 
     useEffect(() => {

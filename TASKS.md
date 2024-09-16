@@ -1,5 +1,5 @@
 # Pending
-- Form action alerts 
+- Form action alerts (toast)
 - Update contents & help texts
 - Validate complete data before start imporing
 - Update Inputs
@@ -8,6 +8,7 @@
 
 
 # Complete
+- Toast added
 - Make UI Responsive
 - Update color schema
 - Update Buttons
