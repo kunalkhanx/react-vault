@@ -5,6 +5,7 @@ import Modal from '../../Elements/Modal'
 import PasswordForm from './PasswordForm'
 import store from '../../Lib/store'
 import { PassKey } from '../Contexts/PassKey'
+import { ToastContext } from '../Contexts/ToastContext'
 
 
 const Passwords = () => {
@@ -14,6 +15,7 @@ const Passwords = () => {
   const [selectedPassword, setSelectedPassword] = useState(null)
 
   const {key} = useContext(PassKey)
+  const {runToast} = useContext(ToastContext)
 
   useEffect(() => {
     fetchPasswords()
@@ -46,9 +48,11 @@ const Passwords = () => {
     if(password){
       if(window.confirm('Are you sure to delete the password?')){
         store.deleteData('passwords', password.id)
+        runToast('Password deleted!')
         fetchPasswords()
       }
     }else{
+      runToast('Nothing to delete!', 'error')
     }
   }
 

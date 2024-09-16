@@ -5,11 +5,14 @@ import { SettingsContext } from '../Contexts/SettingsCtx'
 import ImportExport from './ImportExport'
 import Close from '../../Elements/Close'
 import PrimaryButton from '../../Elements/PrimaryButton'
+import { ToastContext } from '../Contexts/ToastContext'
 
 export const SettingsModal = ({ onClose }) => {
 
     const [settingsFormData, setSettingsFormData] = useState({})
     const { setSettingsData } = useContext(SettingsContext)
+
+    const {runToast} = useContext(ToastContext)
 
     useState(() => {
         setSettingsFormData(settings.get())
@@ -24,6 +27,7 @@ export const SettingsModal = ({ onClose }) => {
         e.preventDefault()
         settings.save(settingsFormData)
         setSettingsData(settingsFormData)
+        runToast('Settings saved!')
     }
 
     return (

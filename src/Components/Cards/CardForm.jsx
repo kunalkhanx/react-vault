@@ -6,6 +6,7 @@ import store from '../../Lib/store';
 import { PassKey } from '../Contexts/PassKey';
 import Close from '../../Elements/Close';
 import PrimaryButton from '../../Elements/PrimaryButton';
+import { ToastContext } from '../Contexts/ToastContext';
 
 const cardTypes = [
     {label: 'Credit Card', value: 'Credit Card' },
@@ -33,6 +34,7 @@ const CardForm = ({ selectedCard, onClose }) => {
     const [errors, setErrors] = useState({ cardName: [], cardType: [], cardNumber: [], cardExpireMonth: [], cardExpireYear: [], cvv: [] })
 
     const {key} = useContext(PassKey)
+    const {runToast} = useContext(ToastContext)
 
     useEffect(() => {
         if(selectedCard){
@@ -59,6 +61,7 @@ const CardForm = ({ selectedCard, onClose }) => {
         }
         store.savedata('cards', {cardName, cardType, cardNumber, cardExpireMonth, cardExpireYear, cvv}, selectedCard ? selectedCard.id : null, key)
         onClose()
+        runToast(selectedCard ? 'Card upated!' : 'New card added!')
     }
 
     return (

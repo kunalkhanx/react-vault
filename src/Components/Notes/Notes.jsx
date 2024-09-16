@@ -5,6 +5,7 @@ import Modal from '../../Elements/Modal'
 import NoteForm from './NoteForm'
 import store from '../../Lib/store'
 import { PassKey } from '../Contexts/PassKey'
+import { ToastContext } from '../Contexts/ToastContext'
 
 const Notes = () => {
 
@@ -13,6 +14,7 @@ const Notes = () => {
   const [selectedNote, setSelectedNote] = useState(null)
 
   const {key} = useContext(PassKey)
+  const {runToast} = useContext(ToastContext)
 
   useEffect(() => {
     fetchNotes()
@@ -45,9 +47,11 @@ const Notes = () => {
     if(note){
       if(window.confirm('Are you sure to delete the note?')){
         store.deleteData('notes', note.id)
+        runToast('Note deleted!')
         fetchNotes()
       }
     }else{
+      runToast('Nothing to delete!', 'error')
     }
   }
 

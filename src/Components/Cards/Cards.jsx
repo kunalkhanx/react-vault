@@ -5,6 +5,7 @@ import Modal from '../../Elements/Modal'
 import CardForm from './CardForm'
 import store from '../../Lib/store'
 import { PassKey } from '../Contexts/PassKey'
+import { ToastContext } from '../Contexts/ToastContext'
 
 const Cards = () => {
 
@@ -13,6 +14,7 @@ const Cards = () => {
   const [selectedCard, setSelectedCard] = useState(null)
 
   const {key} = useContext(PassKey)
+  const {runToast} = useContext(ToastContext)
 
   useEffect(() => {
     fetchCards()
@@ -45,9 +47,11 @@ const Cards = () => {
     if(card){
       if(window.confirm('Are you sure to delete the card?')){
         store.deleteData('cards', card.id)
+        runToast('Card deleted!')
         fetchCards()
       }
     }else{
+      runToast('Nothing to delete!', 'error')
     }
   }
 

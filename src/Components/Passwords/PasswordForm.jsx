@@ -5,6 +5,7 @@ import store from '../../Lib/store';
 import { PassKey } from '../Contexts/PassKey';
 import Close from '../../Elements/Close';
 import PrimaryButton from '../../Elements/PrimaryButton';
+import { ToastContext } from '../Contexts/ToastContext';
 
 const createPasswordSchema = z.object({
     siteName: z.string().min(1),
@@ -23,6 +24,7 @@ const PasswordForm = ({onClose, selectedPassword}) => {
     const [errors, setErrors] = useState({siteName:[''], username: [''], password: ['']})
 
     const {key} = useContext(PassKey)
+    const {runToast} = useContext(ToastContext)
 
     useEffect(() => {
         if(selectedPassword){
@@ -45,6 +47,7 @@ const PasswordForm = ({onClose, selectedPassword}) => {
         }
         store.savedata('passwords', {siteName, username, password}, selectedPassword ? selectedPassword.id : null, key)
         onClose()
+        runToast(selectedPassword ? 'Password updated!' : 'New password added!')
     }
 
     return (

@@ -1,13 +1,13 @@
 # Pending
-- Form action alerts (toast)
 - Update contents & help texts
 - Validate complete data before start imporing
 - Update Inputs
 - Create custom delete confirmation modal
-
-
+- Fix new forms already filled after update
+- Cleat input after import
 
 # Complete
+- Form action alerts (toast)
 - Toast added
 - Make UI Responsive
 - Update color schema

@@ -6,6 +6,7 @@ import store from '../../Lib/store';
 import { PassKey } from '../Contexts/PassKey';
 import Close from '../../Elements/Close';
 import PrimaryButton from '../../Elements/PrimaryButton';
+import { ToastContext } from '../Contexts/ToastContext';
 
 const createNoteSchema = z.object({
     title: z.string().min(1),
@@ -20,6 +21,7 @@ const NoteForm = ({selectedNote, onClose}) => {
     const [errors, setErrors] = useState({title: [], content: []})
 
     const {key} = useContext(PassKey)
+    const {runToast} = useContext(ToastContext)
 
     useEffect(() => {
         if(selectedNote){
@@ -42,6 +44,7 @@ const NoteForm = ({selectedNote, onClose}) => {
         }
         store.savedata('notes', {title, content}, selectedNote ? selectedNote.id : null, key)
         onClose()
+        runToast(selectedNote ? 'Note updated!' : 'New note added')
     }
 
 
