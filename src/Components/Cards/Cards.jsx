@@ -32,6 +32,7 @@ const Cards = () => {
   const onFormCloseHandler = () => {
     setFormMode(false)
     fetchCards()
+    setSelectedCard(null)
   }
 
   const onEditModeHandler = (card) => {

@@ -3,10 +3,11 @@
 - Validate complete data before start imporing
 - Update Inputs
 - Create custom delete confirmation modal
-- Fix new forms already filled after update
 - Cleat input after import
+- Make the passkey input password and have view password toggle
 
 # Complete
+- Fix new forms already filled after update
 - Form action alerts (toast)
 - Toast added
 - Make UI Responsive

@@ -29,6 +29,7 @@ const Passwords = () => {
   const onFormCloseHandler = () => {
     fetchPasswords()
     setFormMode(false)
+    setSelectedPassword(null)
   }
 
   const formOpenHandler = () => {

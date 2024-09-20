@@ -32,6 +32,7 @@ const Notes = () => {
   const onFormCloseHandler = () => {
     setFormMode(false)
     fetchNotes()
+    setSelectedNote(null)
   }
 
   const onEditModeHandler = (note) => {
