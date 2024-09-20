@@ -73,7 +73,7 @@ const ImportExport = () => {
 
                     <div className='flex gap-2 items-center'>
                         <FileInput label={null} setValue={fileUploadHandler} />
-                        <TextInput placeholder={'Enter Passkey'} value={passKeyInput} setValue={setPassKeyInput} />
+                        <TextInput type='password' placeholder={'Enter Passkey'} value={passKeyInput} setValue={setPassKeyInput} />
                     </div>
                     <PrimaryButton type='submit' disabled={!file || !passKeyInput}>
                         Import

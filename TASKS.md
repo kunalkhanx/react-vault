@@ -1,11 +1,11 @@
 # Pending
 - Update contents & help texts
 - Validate complete data before start imporing
-- Update Inputs
 - Create custom delete confirmation modal
-- Make the passkey input password and have view password toggle
 
 # Complete
+- Make the passkey input password and have view password toggle
+- Update Inputs
 - Cleat input after import
 - Fix new forms already filled after update
 - Form action alerts (toast)
