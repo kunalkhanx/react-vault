@@ -29,6 +29,8 @@ const ImportExport = () => {
                     const jsonData = JSON.parse(e.target.result);
                     // setFileData(jsonData);
                     loader.import(jsonData, passKeyInput, key)
+                    setPassKeyInput('')
+                    setFile(null)
                     runToast('Data imported!')
                 } catch (error) {
                     console.error("Error parsing JSON:", error);
