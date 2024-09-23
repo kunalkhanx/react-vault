@@ -13,8 +13,8 @@ const PasswordItem = ({ password, onEditMode, onDelete }) => {
         onEditMode(password)
     }
 
-    const onDeleteBtnClickHandler = () => {
-        onDelete(password)
+    const onDeleteBtnClickHandler = async () => {
+        await onDelete(password)
     }
     
 

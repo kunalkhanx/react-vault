@@ -1,3 +1,4 @@
+import { DeleteProvider } from "./Components/Contexts/DeleteContext";
 import { PassKeyProvider } from "./Components/Contexts/PassKey";
 import { SettingsProvider } from "./Components/Contexts/SettingsCtx";
 import { ToastProvider } from "./Components/Contexts/ToastContext";
@@ -9,7 +10,9 @@ function App() {
       <ToastProvider>
         <SettingsProvider>
           <PassKeyProvider>
-            <Page />
+            <DeleteProvider>
+              <Page />
+            </DeleteProvider>
           </PassKeyProvider>
         </SettingsProvider>
       </ToastProvider>

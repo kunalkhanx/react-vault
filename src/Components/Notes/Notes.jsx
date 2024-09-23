@@ -6,6 +6,7 @@ import NoteForm from './NoteForm'
 import store from '../../Lib/store'
 import { PassKey } from '../Contexts/PassKey'
 import { ToastContext } from '../Contexts/ToastContext'
+import { DeleteContext } from '../Contexts/DeleteContext'
 
 const Notes = () => {
 
@@ -15,6 +16,7 @@ const Notes = () => {
 
   const {key} = useContext(PassKey)
   const {runToast} = useContext(ToastContext)
+  const confirmDelete = useContext(DeleteContext)
 
   useEffect(() => {
     fetchNotes()
@@ -44,9 +46,10 @@ const Notes = () => {
     }
   }
 
-  const onDeleteModeHandler = (note) => {
+  const onDeleteModeHandler = async (note) => {
     if(note){
-      if(window.confirm('Are you sure to delete the note?')){
+      const confirm = await confirmDelete('Are you sure to delete the note?')
+      if(confirm){
         store.deleteData('notes', note.id)
         runToast('Note deleted!')
         fetchNotes()

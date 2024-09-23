@@ -6,6 +6,7 @@ import CardForm from './CardForm'
 import store from '../../Lib/store'
 import { PassKey } from '../Contexts/PassKey'
 import { ToastContext } from '../Contexts/ToastContext'
+import { DeleteContext } from '../Contexts/DeleteContext'
 
 const Cards = () => {
 
@@ -15,6 +16,7 @@ const Cards = () => {
 
   const {key} = useContext(PassKey)
   const {runToast} = useContext(ToastContext)
+  const confirmDelete = useContext(DeleteContext)
 
   useEffect(() => {
     fetchCards()
@@ -44,9 +46,10 @@ const Cards = () => {
     }
   }
 
-  const onDeleteModeHandler = (card) => {
+  const onDeleteModeHandler = async (card) => {
     if(card){
-      if(window.confirm('Are you sure to delete the card?')){
+      const confirmed = await confirmDelete('Are you sure to delete the card?')
+      if(confirmed){
         store.deleteData('cards', card.id)
         runToast('Card deleted!')
         fetchCards()

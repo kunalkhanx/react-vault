@@ -1,9 +1,11 @@
 # Pending
 - Update contents & help texts
 - Validate complete data before start imporing
-- Create custom delete confirmation modal
+- Move context from Components to Src
+- Fix padding of overflow pages
 
 # Complete
+- Create custom delete confirmation modal
 - Make the passkey input password and have view password toggle
 - Update Inputs
 - Cleat input after import

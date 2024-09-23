@@ -6,6 +6,7 @@ import PasswordForm from './PasswordForm'
 import store from '../../Lib/store'
 import { PassKey } from '../Contexts/PassKey'
 import { ToastContext } from '../Contexts/ToastContext'
+import { DeleteContext } from '../Contexts/DeleteContext'
 
 
 const Passwords = () => {
@@ -16,6 +17,7 @@ const Passwords = () => {
 
   const {key} = useContext(PassKey)
   const {runToast} = useContext(ToastContext)
+  const confirmDelete = useContext(DeleteContext)
 
   useEffect(() => {
     fetchPasswords()
@@ -45,9 +47,10 @@ const Passwords = () => {
     }
   }
 
-  const onDeleteModeHandler = (password) => {
+  const onDeleteModeHandler = async (password) => {
     if(password){
-      if(window.confirm('Are you sure to delete the password?')){
+      const confirmed = await confirmDelete('Are you sure to delete the password?')
+      if(confirmed){
         store.deleteData('passwords', password.id)
         runToast('Password deleted!')
         fetchPasswords()

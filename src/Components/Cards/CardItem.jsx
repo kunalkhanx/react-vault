@@ -15,8 +15,8 @@ const CardItem = ({ card, onEditMode, onDelete }) => {
         onEditMode(card)
     }
 
-    const onDeleteBtnClickHandler = () => {
-        onDelete(card)
+    const onDeleteBtnClickHandler = async () => {
+        await onDelete(card)
     }
 
     return (

@@ -7,8 +7,8 @@ const NoteItem = ({ note, onEditMode, onDelete }) => {
     onEditMode(note)
   }
 
-  const onDeleteBtnClickHandler = () => {
-    onDelete(note)
+  const onDeleteBtnClickHandler = async () => {
+    await onDelete(note)
   }
 
   return (
