@@ -24,7 +24,7 @@ const Sections = () => {
     }, [])
 
   return (
-    <div className='flex flex-col gap-6'>
+    <div className='flex flex-col gap-6 mb-6'>
         <SectionTabs onChange={tabChangeHandler} currentTab={currentSection} />
         {currentSection === 'passwords' ? <Passwords /> : null}
         {currentSection === 'cards' ? <Cards /> : null}
