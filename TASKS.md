@@ -1,9 +1,9 @@
 # Pending
 - Validate complete data before start imporing
 - Add view on notes
-- Update README
 
 # Complete
+- Update README
 - Add title, meta description & favicon
 - Fix context errors
 - Update contents & help texts
