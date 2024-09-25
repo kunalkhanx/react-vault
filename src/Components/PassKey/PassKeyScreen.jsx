@@ -51,6 +51,53 @@ const PassKeyScreen = ({setValue}) => {
                     <PrimaryButton disabled={hash === false} type='submit'>{hash === null ? 'Start' : 'Decrypt'}</PrimaryButton>
                 </div>
             </form>
+            {hash === null && <>
+            <hr className='my-8 border-gray-700' />
+            <div className='text-gray-400'>
+                <p className='mb-4'>Read this before start</p>
+                <ul className='text-sm flex flex-col gap-3'>
+                    <li className='flex items-start gap-2'>
+                        <span className='text-green-500'>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>The passkey is not stored anywhere and cannot be recovered once lost.</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                        <span className='text-green-500'>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>Your data is securely stored in your browser's local storage.</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                        <span className='text-green-500'>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>Clearing your browser's data will result in the loss of stored information.</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                        <span className='text-green-500'>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>You can easily back up and restore your data.</span>
+                    </li>
+                    <li className='flex items-start gap-2'>
+                        <span className='text-green-500'>
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-5">
+                                <path strokeLinecap="round" strokeLinejoin="round" d="m4.5 12.75 6 6 9-13.5" />
+                            </svg>
+                        </span>
+                        <span>No data is sent to any server, and the app can be used offline.</span>
+                    </li>
+                </ul>
+            </div></>}
         </div>
     </div>
   )

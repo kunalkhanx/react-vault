@@ -1,9 +1,11 @@
 # Pending
-- Update contents & help texts
 - Validate complete data before start imporing
 - Add view on notes
+- Update README
+- Fix context errors
 
 # Complete
+- Update contents & help texts
 - Fix password toggle position after error message
 - Fix padding of overflow pages
 - Move context from Components to Src
