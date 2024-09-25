@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import Toast from "../../Elements/Toast";
+import Toast from "../Elements/Toast";
 
 export const ToastContext = createContext(null)
 

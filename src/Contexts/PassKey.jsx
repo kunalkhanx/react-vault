@@ -1,5 +1,5 @@
 import { createContext, useContext, useEffect, useState } from "react";
-import PassKeyScreen from "../PassKey/PassKeyScreen";
+import PassKeyScreen from "../Components/PassKey/PassKeyScreen";
 import { SettingsContext } from "./SettingsCtx";
 
 export const PassKey = createContext(null)

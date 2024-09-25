@@ -4,9 +4,9 @@ import CardItem from './CardItem'
 import Modal from '../../Elements/Modal'
 import CardForm from './CardForm'
 import store from '../../Lib/store'
-import { PassKey } from '../Contexts/PassKey'
-import { ToastContext } from '../Contexts/ToastContext'
-import { DeleteContext } from '../Contexts/DeleteContext'
+import { PassKey } from '../../Contexts/PassKey'
+import { ToastContext } from '../../Contexts/ToastContext'
+import { DeleteContext } from '../../Contexts/DeleteContext'
 
 const Cards = () => {
 

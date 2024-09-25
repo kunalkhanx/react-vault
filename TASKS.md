@@ -2,9 +2,10 @@
 - Validate complete data before start imporing
 - Add view on notes
 - Update README
-- Fix context errors
+- Add title, meta description & favicon
 
 # Complete
+- Fix context errors
 - Update contents & help texts
 - Fix password toggle position after error message
 - Fix padding of overflow pages

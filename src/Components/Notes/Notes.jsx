@@ -4,9 +4,9 @@ import NoteItem from './NoteItem'
 import Modal from '../../Elements/Modal'
 import NoteForm from './NoteForm'
 import store from '../../Lib/store'
-import { PassKey } from '../Contexts/PassKey'
-import { ToastContext } from '../Contexts/ToastContext'
-import { DeleteContext } from '../Contexts/DeleteContext'
+import { PassKey } from '../../Contexts/PassKey'
+import { ToastContext } from '../../Contexts/ToastContext'
+import { DeleteContext } from '../../Contexts/DeleteContext'
 
 const Notes = () => {
 

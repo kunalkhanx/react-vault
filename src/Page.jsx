@@ -3,7 +3,7 @@ import Navbar from './Components/Navbar/Navbar'
 import Sections from './Components/Sections'
 import Modal from './Elements/Modal'
 import { SettingsModal } from './Components/Settings/SettingsModal'
-import { PassKey } from './Components/Contexts/PassKey'
+import { PassKey } from './Contexts/PassKey'
 
 export const Page = () => {
   

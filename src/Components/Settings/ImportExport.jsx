@@ -2,9 +2,9 @@ import React, { useContext, useState } from 'react'
 import loader from '../../Lib/loader'
 import FileInput from '../../Elements/FileInput'
 import TextInput from '../../Elements/TextInput'
-import { PassKey } from '../Contexts/PassKey'
+import { PassKey } from '../../Contexts/PassKey'
 import PrimaryButton from '../../Elements/PrimaryButton'
-import { ToastContext } from '../Contexts/ToastContext'
+import { ToastContext } from '../../Contexts/ToastContext'
 
 const ImportExport = () => {
 

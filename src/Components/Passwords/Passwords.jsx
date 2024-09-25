@@ -4,9 +4,9 @@ import SectionTitle from '../SectionTitle'
 import Modal from '../../Elements/Modal'
 import PasswordForm from './PasswordForm'
 import store from '../../Lib/store'
-import { PassKey } from '../Contexts/PassKey'
-import { ToastContext } from '../Contexts/ToastContext'
-import { DeleteContext } from '../Contexts/DeleteContext'
+import { PassKey } from '../../Contexts/PassKey'
+import { ToastContext } from '../../Contexts/ToastContext'
+import { DeleteContext } from '../../Contexts/DeleteContext'
 
 
 const Passwords = () => {

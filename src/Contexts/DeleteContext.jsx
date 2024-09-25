@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import DeleteModal from "../../Elements/DeleteModal";
+import DeleteModal from "../Elements/DeleteModal";
 
 export const DeleteContext = createContext(null);
 

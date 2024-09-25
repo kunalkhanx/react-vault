@@ -3,10 +3,10 @@ import TextInput from '../../Elements/TextInput'
 import TextArea from '../../Elements/TextArea'
 import { z } from 'zod';
 import store from '../../Lib/store';
-import { PassKey } from '../Contexts/PassKey';
+import { PassKey } from '../../Contexts/PassKey';
 import Close from '../../Elements/Close';
 import PrimaryButton from '../../Elements/PrimaryButton';
-import { ToastContext } from '../Contexts/ToastContext';
+import { ToastContext } from '../../Contexts/ToastContext';
 
 const createNoteSchema = z.object({
     title: z.string().min(1),

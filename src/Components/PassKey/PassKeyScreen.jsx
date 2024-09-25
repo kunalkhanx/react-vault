@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import TextInput from '../../Elements/TextInput'
 import { SHA256 } from 'crypto-js'
 import PrimaryButton from '../../Elements/PrimaryButton'
-import { ToastContext } from '../Contexts/ToastContext'
+import { ToastContext } from '../../Contexts/ToastContext'
 
 const nounce = 'magemonitor' // This is a string key that will use to verify key by hashing
 

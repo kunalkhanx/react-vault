@@ -1,5 +1,5 @@
 import { createContext, useEffect, useState } from "react";
-import settings from "../Settings/settings";
+import settings from "../Components/Settings/settings";
 
 export const SettingsContext = createContext({})
 

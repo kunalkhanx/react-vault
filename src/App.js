@@ -1,7 +1,7 @@
-import { DeleteProvider } from "./Components/Contexts/DeleteContext";
-import { PassKeyProvider } from "./Components/Contexts/PassKey";
-import { SettingsProvider } from "./Components/Contexts/SettingsCtx";
-import { ToastProvider } from "./Components/Contexts/ToastContext";
+import { DeleteProvider } from "./Contexts/DeleteContext";
+import { PassKeyProvider } from "./Contexts/PassKey";
+import { SettingsProvider } from "./Contexts/SettingsCtx";
+import { ToastProvider } from "./Contexts/ToastContext";
 import { Page } from "./Page";
 
 function App() {

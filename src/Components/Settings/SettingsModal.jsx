@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import TextInput from '../../Elements/TextInput'
 import settings from './settings'
-import { SettingsContext } from '../Contexts/SettingsCtx'
+import { SettingsContext } from '../../Contexts/SettingsCtx'
 import ImportExport from './ImportExport'
 import Close from '../../Elements/Close'
 import PrimaryButton from '../../Elements/PrimaryButton'
-import { ToastContext } from '../Contexts/ToastContext'
+import { ToastContext } from '../../Contexts/ToastContext'
 
 export const SettingsModal = ({ onClose }) => {
 
