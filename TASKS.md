@@ -1,10 +1,11 @@
 # Pending
 - Update contents & help texts
 - Validate complete data before start imporing
-- Fix padding of overflow pages
-- Restore the password validation
+- Add view on notes
 
 # Complete
+- Fix password toggle position after error message
+- Fix padding of overflow pages
 - Move context from Components to Src
 - Create custom delete confirmation modal
 - Make the passkey input password and have view password toggle
