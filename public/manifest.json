@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "React Vault",
+  "name": "Secure React app for storing passwords, credit cards, and notes",
   "icons": [
     {
       "src": "favicon.ico",
